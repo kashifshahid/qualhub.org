@@ -181,7 +181,7 @@ h6 {
   color: var(--heading-color);
 }
 
-.header .btn-getstarted,
+/* .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
   background: var(--accent-color);
@@ -195,7 +195,7 @@ h6 {
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
   background: color-mix(in srgb, var(--accent-color), transparent 15%);
-}
+} */
 
 @media (max-width: 1199px) {
   .header {

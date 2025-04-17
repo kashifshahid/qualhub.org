@@ -55,7 +55,7 @@
                 <nav id="navmenu" class="navmenu">
                     <ul class="gap-lg-2">
                         <li>
-                            <a href="#hero">
+                            <a href="#hero" onclick="scrollToSection(event, 'hero')">
                                 <div class="d-flex justify-content-between w-100 align-items-center">
                                     About Us 
                                     <i class="bi bi-chevron-right icon d-xl-none"></i>
@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#what_we_do">
+                            <a href="#what_we_do" onclick="scrollToSection(event, 'what_we_do')">
                                 <div class="d-flex justify-content-between w-100 align-items-center">
                                     What we do
                                     <i class="bi bi-chevron-right icon d-xl-none"></i>
@@ -71,7 +71,7 @@
                             </a> 
                         </li>
                         <li>
-                            <a href="#our_product">
+                            <a href="#our_product" onclick="scrollToSection(event, 'our_product')">
                                 <div class="d-flex justify-content-between w-100 align-items-center">
                                     Our Product
                                     <i class="bi bi-chevron-right icon d-xl-none"></i>
@@ -79,18 +79,24 @@
                             </a> 
                         </li>
                         <li>
-                            <a href="#how_its_work">
+                            <a href="#how_its_work" onclick="scrollToSection(event, 'how_its_work')">
                                 <div class="d-flex justify-content-between w-100 align-items-center">
                                     How it works
                                     <i class="bi bi-chevron-right icon d-xl-none"></i>
                                 </div>
                             </a> 
                         </li>
-                        <li><a class="btn btn-primary mx-3 mt-3 text-white d-lg-none d-block rounded btn-lg" href="index.html#about">Request a demo</a></li>
+                        <li>
+                            <a class="btn btn-primary mx-3 mt-3 text-white d-lg-none d-block rounded btn-lg"
+                               href="#about" onclick="scrollToSection(event, 'about')">
+                               Request a demo
+                            </a>
+                        </li>
                     </ul>
+                    
                     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
                 </nav>
-                <a class="btn-getstarted ms-lg-3 d-lg-block d-none" href="index.html#about">Get Started</a>
+                <a class="btn-sm btn btn-primary px-2 rounded-3 d-lg-block d-none" href="index.html#about">Request a demo</a>
             </div>
         </div>
     </header>
@@ -730,7 +736,7 @@
                         <nav id="navmenu" class="footer-navmenu">
                             <ul class="gap-lg-2">
                                 <li><a  href="#hero">Terms of Service</a></li>
-                                <li><a href="#services">Privacy Policy</a></li>
+                                <li><a href="/privacyPolicy.html">Privacy Policy</a></li>
                                 <li><a class="pe-0" href="#abourus">About Us</a></li>
                             </ul>
                         </nav>
@@ -768,6 +774,44 @@
     <script src="assets/js/main.js"></script>
  
     <script>
+        // function scrollToSection(event, id) {
+        //     event.preventDefault();
+        //     const target = document.getElementById(id);
+        //     if (target) {
+        //         target.scrollIntoView({ behavior: 'smooth' });
+        //         history.replaceState(null, null, ' '); // Removes the # from the URL
+        //     }
+        // }
+
+        function scrollToSection(event, id) {
+            event.preventDefault();
+            const target = document.getElementById(id);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+
+                // Remove the hash from the address bar without reloading
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+            }
+
+            // On page load: if URL has a hash (e.g. #what_we_do), scroll there and hide the hash
+            document.addEventListener("DOMContentLoaded", function () {
+            const hash = window.location.hash;
+            if (hash) {
+                const id = hash.substring(1);
+                const target = document.getElementById(id);
+                if (target) {
+                setTimeout(() => {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    history.replaceState(null, null, window.location.pathname + window.location.search);
+                }, 100);
+                } else {
+                // If hash exists but target doesn't, still remove it (for home page cleanup)
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+                }
+            }
+            });
+
         $(window).on("load", function () {
             $("#loader").fadeOut(1000, function () {
                 $("#content").fadeIn(1000);
