@@ -292,6 +292,24 @@
     </div>
 </footer>
 
+  <!-- Modal -->
+<div class="modal fade" id="requestDemo" tabindex="-1" aria-labelledby="requestDemoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content rounded-4 shadow">
+        <div class="modal-header">
+        <h5 class="modal-title" id="requestDemoLabel">Request a demo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+        <!-- HubSpot Form Embed -->
+        <div id="hubspotFormContainer" class="p-2">
+            <!-- HubSpot form will be rendered here -->
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -313,5 +331,16 @@
           $("#content").fadeIn(1000);
       });
   });
+</script>
+
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script>
+hbspt.forms.create({
+    portalId: "20130333",
+    formId: "3914bafb-f18c-4e61-9961-948a37d3cc22",
+    region: "na1",
+    target: "#hubspotFormContainer",  // Attach the form to the wrapper
+    // css: '',
+});
 </script>
 </html>
