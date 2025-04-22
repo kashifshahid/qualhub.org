@@ -1112,6 +1112,17 @@ section,
   }
 }
 
+@media (max-width: 768px) {
+  .about .feature-list-wrapper .right-col h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .about .feature-list-wrapper .left-col h3 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Our Team Section
 --------------------------------------------------------------*/
