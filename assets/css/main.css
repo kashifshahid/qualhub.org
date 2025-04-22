@@ -1717,11 +1717,12 @@ section,
 }
 
 .book-consultation-section .book-consultation .btn-consultation span{
-  background: linear-gradient(91.88deg, #193B61 0.24%, #008CCB 46.05%);
+  /* background: linear-gradient(91.88deg, #193B61 0.24%, #008CCB 46.05%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   font-size: 1.125rem;
+  color: var(--dark-color);
 }
 
 @media (max-width: 991px){
